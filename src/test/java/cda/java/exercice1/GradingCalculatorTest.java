@@ -2,90 +2,29 @@ package cda.java.exercice1;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class GradingCalculatorTest {
 
-    @Test
-    public void when_score_95_presence_90() {
+    @ParameterizedTest
+    @CsvSource({
+            "95, 90, A",
+            "85, 90, B",
+            "65, 90, C",
+            "95, 65, B",
+            "95, 55, F",
+            "65, 55, F",
+            "50, 90, F"
+    })
+    public void testMultipleInputs(int score, int presence, char expectedGrade) {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(95, 90);
+        GradingCalculator gradingCalculator = new GradingCalculator(score, presence);
 
         // Act
         char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals('A', result);
-    }
-
-    @Test
-    public void when_score_85_presence_90() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(85, 90);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('B', result);
-    }
-
-    @Test
-    public void when_score_65_presence_90() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(65, 90);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('C', result);
-    }
-
-    @Test
-    public void when_score_95_presence_65() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(95, 65);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('B', result);
-    }
-
-    @Test
-    public void when_score_95_presence_55() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(95, 55);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('F', result);
-    }
-
-    @Test
-    public void when_score_65_presence_55() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(65, 55);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('F', result);
-    }
-
-    @Test
-    public void when_score_50_presence_90() {
-        // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator(50, 90);
-
-        // Act
-        char result = gradingCalculator.getGrade();
-
-        // Assert
-        Assert.assertEquals('F', result);
+        Assert.assertEquals(expectedGrade, result);
     }
 }
