@@ -47,4 +47,18 @@ public class DiceScoreTest {
         // Assert
         Assert.assertEquals(5, score);
     }
+
+    @Test
+    public void testDifferentDice_HighestValueReturned2() {
+        // Arrange
+        Ide deMock = Mockito.mock(Ide.class);
+        Mockito.when(deMock.getRoll()).thenReturn(5, 3);
+        DiceScore diceScore = new DiceScore(deMock);
+
+        // Act
+        int score = diceScore.getScore();
+
+        // Assert
+        Assert.assertEquals(5, score);
+    }
 }
