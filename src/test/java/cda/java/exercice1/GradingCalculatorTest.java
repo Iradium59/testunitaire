@@ -6,100 +6,86 @@ import org.junit.Test;
 public class GradingCalculatorTest {
 
     @Test
-    public void when_score_95_presence_90(){
+    public void when_score_95_presence_90() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 95;
-        double presence = 90;
+        GradingCalculator gradingCalculator = new GradingCalculator(95, 90);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("A", result);
+        Assert.assertEquals('A', result);
     }
 
     @Test
-    public void when_score_85_presence_90(){
+    public void when_score_85_presence_90() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 85;
-        double presence = 90;
+        GradingCalculator gradingCalculator = new GradingCalculator(85, 90);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("B", result);
+        Assert.assertEquals('B', result);
     }
 
     @Test
-    public void when_score_65_presence_90(){
+    public void when_score_65_presence_90() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 65;
-        double presence = 90;
+        GradingCalculator gradingCalculator = new GradingCalculator(65, 90);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("C", result);
+        Assert.assertEquals('C', result);
     }
 
     @Test
-    public void when_score_95_presence_65(){
+    public void when_score_95_presence_65() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 95;
-        double presence = 65;
+        GradingCalculator gradingCalculator = new GradingCalculator(95, 65);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("B", result);
+        Assert.assertEquals('B', result);
     }
 
     @Test
-    public void when_score_95_presence_55(){
+    public void when_score_95_presence_55() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 95;
-        double presence = 55;
+        GradingCalculator gradingCalculator = new GradingCalculator(95, 55);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("F", result);
+        Assert.assertEquals('F', result);
     }
 
     @Test
-    public void when_score_65_presence_55(){
+    public void when_score_65_presence_55() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 65;
-        double presence = 55;
+        GradingCalculator gradingCalculator = new GradingCalculator(65, 55);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("F", result);
+        Assert.assertEquals('F', result);
     }
 
     @Test
-    public void when_score_50_presence_90(){
+    public void when_score_50_presence_90() {
         // Arrange
-        GradingCalculator gradingCalculator = new GradingCalculator();
-        double score = 50;
-        double presence = 90;
+        GradingCalculator gradingCalculator = new GradingCalculator(50, 90);
 
         // Act
-        String result = gradingCalculator.getGrade(score, presence);
+        char result = gradingCalculator.getGrade();
 
         // Assert
-        Assert.assertEquals("F", result);
+        Assert.assertEquals('F', result);
     }
 }
