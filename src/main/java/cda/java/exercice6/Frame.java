@@ -25,7 +25,10 @@ public class Frame {
         }
 
         int availablePins = 10;
-        if (!rolls.isEmpty() && rolls.get(0).getPins() < 10) {
+
+        if (lastFrame && rolls.size() == 2 && (rolls.get(0).getPins() + rolls.get(1).getPins() == 10)) {
+            availablePins = 10;
+        } else if (!rolls.isEmpty() && rolls.get(0).getPins() < 10) {
             availablePins = 10 - rolls.stream().mapToInt(Roll::getPins).sum();
         }
 
@@ -33,15 +36,23 @@ public class Frame {
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
 
-        if (lastFrame && rolls.size() == 3) {
-            if (rolls.get(0).getPins() + rolls.get(1).getPins() == 10) {
-                score = 10 + rolls.get(2).getPins();
+        for (int i = 0; i < rolls.size(); i++) {
+            System.out.println("Roll " + (i + 1) + " pins: " + rolls.get(i).getPins());
+        }
+
+        if (lastFrame) {
+            if (rolls.size() == 3 && rolls.get(0).getPins() + rolls.get(1).getPins() == 10) {
+
+            } else if (rolls.size() == 3 && rolls.get(0).getPins() == 10) {
+                score = 10 + rolls.get(1).getPins() + rolls.get(2).getPins();
             } else {
                 score += pinsKnockedDown;
             }
         } else {
             score += pinsKnockedDown;
         }
+
+        System.out.println("Current score: " + score);
 
         return true;
     }
