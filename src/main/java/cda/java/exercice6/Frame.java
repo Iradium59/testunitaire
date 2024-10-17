@@ -16,6 +16,10 @@ public class Frame {
     }
 
     public boolean makeRoll() {
+        if (!rolls.isEmpty() && rolls.get(0).getPins() == 10) {
+            return false;
+        }
+
         int availablePins = 10;
 
         if (!rolls.isEmpty()) {
@@ -25,7 +29,6 @@ public class Frame {
         int pinsKnockedDown = generateur.randomPin(availablePins);
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
-
         score += pinsKnockedDown;
         return true;
     }
