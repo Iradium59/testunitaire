@@ -12,6 +12,20 @@ public class Shop {
             if (product.getQuality() < 50) {
                 product.setQuality(product.getQuality() + 1);
             }
+        } else if (product.getType().equals("dairy")) {
+            if (product.getSellIn() < 0) {
+                if (product.getQuality() > 3) {
+                    product.setQuality(product.getQuality() - 4);
+                } else {
+                    product.setQuality(0);
+                }
+            } else {
+                if (product.getQuality() > 1) {
+                    product.setQuality(product.getQuality() - 2);
+                } else {
+                    product.setQuality(0);
+                }
+            }
         } else {
             if (product.getSellIn() < 0) {
                 if (product.getQuality() > 1) {

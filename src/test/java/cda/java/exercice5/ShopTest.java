@@ -81,6 +81,6 @@ public class ShopTest {
         shop.update(product);
 
         // Assert
-        Assert.assertEquals(18, product.getQuality());  // La qualité a baissé de 2
+        Assert.assertEquals(18, product.getQuality());
     }
 }
