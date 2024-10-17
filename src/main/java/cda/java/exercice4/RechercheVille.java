@@ -8,7 +8,7 @@ public class RechercheVille {
     private List<String> villes;
 
     public List<String> rechercher(String mot)  {
-//        throw new NotFoundException();
-        return null;
+        throw new NotFoundException();
+//        return null;
     }
 }
