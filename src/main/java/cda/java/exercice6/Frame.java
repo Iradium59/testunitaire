@@ -16,7 +16,13 @@ public class Frame {
     }
 
     public boolean makeRoll() {
-        if (!rolls.isEmpty() && rolls.get(0).getPins() == 10) {
+        if (!lastFrame && !rolls.isEmpty() && (rolls.get(0).getPins() == 10 || rolls.size() == 2)) {
+            return false;
+        }
+
+        if (lastFrame && rolls.size() == 2 && rolls.get(0).getPins() == 10) {
+        } else if (lastFrame && rolls.size() >= 3) {
+
             return false;
         }
 
@@ -29,9 +35,11 @@ public class Frame {
         int pinsKnockedDown = generateur.randomPin(availablePins);
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
+
         score += pinsKnockedDown;
         return true;
     }
+
 
     public int getScore() {
         return this.score;
