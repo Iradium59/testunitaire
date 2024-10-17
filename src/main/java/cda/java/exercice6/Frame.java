@@ -16,30 +16,33 @@ public class Frame {
     }
 
     public boolean makeRoll() {
+        // Si c'est une série standard et qu'un strike a été réalisé ou que deux lancers ont déjà été effectués, retournez false
         if (!lastFrame && !rolls.isEmpty() && (rolls.get(0).getPins() == 10 || rolls.size() == 2)) {
-            return false;
+            return false;  // Strike ou déjà deux lancers dans une série standard
         }
 
-        if (lastFrame && rolls.size() == 2 && rolls.get(0).getPins() == 10) {
-        } else if (lastFrame && rolls.size() >= 3) {
-            return false;
+        // Si c'est la série finale (dernier round), on permet un troisième lancer après un strike
+        if (lastFrame && rolls.size() >= 3) {
+            return false;  // Pas de quatrième lancer autorisé dans la dernière série
         }
 
+        // Si c'est le premier lancer, 10 quilles disponibles
         int availablePins = 10;
+
+        // S'il y a déjà eu des lancers, on calcule les quilles restantes (sauf si strike au premier lancer)
         if (!rolls.isEmpty() && rolls.get(0).getPins() < 10) {
             availablePins = 10 - rolls.stream().mapToInt(Roll::getPins).sum();
         }
 
+        // Génère un nombre aléatoire de quilles renversées (maximum le nombre de quilles disponibles)
         int pinsKnockedDown = generateur.randomPin(availablePins);
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
 
-        if (lastFrame && rolls.get(0).getPins() == 10 && rolls.size() >= 2) {
-            score = rolls.stream().mapToInt(Roll::getPins).sum();
-        } else {
-            score += pinsKnockedDown;
-        }
+        // Mise à jour progressive du score sans recalcul excessif
+        score += pinsKnockedDown;
 
+        // Retourne true pour indiquer que le lancer a réussi
         return true;
     }
 
