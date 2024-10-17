@@ -22,6 +22,10 @@ public class Product {
         return this.quality;
     }
 
+    public String getType() {
+        return this.type;
+    }
+
     public void setSellIn(int sellIn) {
         this.sellIn = sellIn;
     }
