@@ -154,14 +154,15 @@ public class FrameTest {
         Frame frame = new Frame(generateur, true);
         frame.makeRoll();
 
-        // Act
         Mockito.when(generateur.randomPin(5)).thenReturn(5);
         frame.makeRoll();
-        Mockito.when(generateur.randomPin(10)).thenReturn(8);
+
+        // Act
+        Mockito.when(generateur.randomPin(10)).thenReturn(7);
         frame.makeRoll();
 
         // Assert
-        Assert.assertEquals(18, frame.getScore());
+        Assert.assertEquals(17, frame.getScore());
     }
 
     @Test

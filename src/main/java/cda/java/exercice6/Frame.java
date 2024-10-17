@@ -25,7 +25,6 @@ public class Frame {
         }
 
         int availablePins = 10;
-
         if (!rolls.isEmpty() && rolls.get(0).getPins() < 10) {
             availablePins = 10 - rolls.stream().mapToInt(Roll::getPins).sum();
         }
@@ -33,10 +32,19 @@ public class Frame {
         int pinsKnockedDown = generateur.randomPin(availablePins);
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
-        score += pinsKnockedDown;
+
+        if (lastFrame && rolls.size() == 3) {
+            if (rolls.get(0).getPins() + rolls.get(1).getPins() == 10) {
+                score = 10 + rolls.get(2).getPins();
+            } else {
+                score += pinsKnockedDown;
+            }
+        } else {
+            score += pinsKnockedDown;
+        }
+
         return true;
     }
-
 
     public int getScore() {
         return this.score;
