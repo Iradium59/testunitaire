@@ -30,16 +30,16 @@ public class FrameTest {
     @Test
     public void Roll_SimpleFrame_SecondRoll_CheckScore() {
         // Arrange
-        Mockito.when(generateur.randomPin(5)).thenReturn(4);
+        Mockito.when(generateur.randomPin(10)).thenReturn(5);
+        Mockito.when(generateur.randomPin(5)).thenReturn(3);
         Frame frame = new Frame(generateur, false);
         frame.makeRoll();
 
         // Act
-        boolean rollResult = frame.makeRoll();
+        frame.makeRoll();
 
         // Assert
-
-        Assert.assertEquals(9, frame.getScore());
+        Assert.assertEquals(8, frame.getScore());
     }
 
     @Test

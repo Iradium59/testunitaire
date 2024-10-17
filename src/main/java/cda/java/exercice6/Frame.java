@@ -16,12 +16,17 @@ public class Frame {
     }
 
     public boolean makeRoll() {
-        int pinsKnockedDown = generateur.randomPin(10);
+        int availablePins = 10;
+
+        if (!rolls.isEmpty()) {
+            availablePins = 10 - rolls.stream().mapToInt(Roll::getPins).sum();
+        }
+
+        int pinsKnockedDown = generateur.randomPin(availablePins);
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
 
         score += pinsKnockedDown;
-
         return true;
     }
 
