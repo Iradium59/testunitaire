@@ -16,8 +16,12 @@ public class RechercheVille {
     );
 
     public List<String> rechercher(String mot) throws NotFoundException {
-        if (mot.length() < 2) {
+        if (mot.length() < 2 && !mot.equals("*")) {
             throw new NotFoundException();
+        }
+
+        if (mot.equals("*")) {
+            return villes;
         }
 
         return villes.stream()

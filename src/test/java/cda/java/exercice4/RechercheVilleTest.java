@@ -59,7 +59,7 @@ public class RechercheVilleTest {
     public void rechercheWhenTextIsAsterisk_ThenReturnAllCities() {
         // Arrange
         RechercheVille rechercheVille = new RechercheVille();
-        List<String> villes = List.of("Paris", "Budapest", "Valence", "Vancouver");
+        List<String> villes = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
 
         // Act
         List<String> result = rechercheVille.rechercher("*");
