@@ -22,13 +22,11 @@ public class Frame {
 
         if (lastFrame && rolls.size() == 2 && rolls.get(0).getPins() == 10) {
         } else if (lastFrame && rolls.size() >= 3) {
-
             return false;
         }
 
         int availablePins = 10;
-
-        if (!rolls.isEmpty()) {
+        if (!rolls.isEmpty() && rolls.get(0).getPins() < 10) {
             availablePins = 10 - rolls.stream().mapToInt(Roll::getPins).sum();
         }
 
@@ -36,7 +34,12 @@ public class Frame {
         Roll roll = new Roll(pinsKnockedDown);
         rolls.add(roll);
 
-        score += pinsKnockedDown;
+        if (lastFrame && rolls.get(0).getPins() == 10 && rolls.size() >= 2) {
+            score = rolls.stream().mapToInt(Roll::getPins).sum();
+        } else {
+            score += pinsKnockedDown;
+        }
+
         return true;
     }
 
