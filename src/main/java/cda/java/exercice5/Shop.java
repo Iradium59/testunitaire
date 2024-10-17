@@ -6,6 +6,10 @@ public class Shop {
     private List<Product> products;
 
     public void update(Product product) {
-       return;
+        product.setSellIn(product.getSellIn() - 1);
+
+        if (product.getQuality() > 0) {
+            product.setQuality(product.getQuality() - 1);
+        }
     }
 }

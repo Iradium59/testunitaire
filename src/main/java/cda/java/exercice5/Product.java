@@ -15,10 +15,18 @@ public class Product {
     }
 
     public int getSellIn() {
-        return 1;
+        return this.sellIn;
     }
 
     public int getQuality() {
-        return 1;
+        return this.quality;
+    }
+
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
+    }
+
+    public void setQuality(int quality) {
+        this.quality = quality;
     }
 }
