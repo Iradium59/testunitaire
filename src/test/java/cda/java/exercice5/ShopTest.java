@@ -48,7 +48,7 @@ public class ShopTest {
     @Test
     public void update_WhenQualityIs50_QualityDoesNotExceedMax() {
         // Arrange
-        Product product = new Product("normal", "Produit normal", 5, 50);
+        Product product = new Product("normal", "Produit Normal", 10, 52);
         Shop shop = new Shop();
 
         // Act
