@@ -1,5 +1,6 @@
 package cda.java.exercice6;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Frame {
@@ -11,13 +12,20 @@ public class Frame {
     public Frame(IGenerateur generateur, boolean lastFrame) {
         this.lastFrame = lastFrame;
         this.generateur = generateur;
+        this.rolls = new ArrayList<Roll>();
     }
 
-    public boolean makeRoll(){
-        return false;
+    public boolean makeRoll() {
+        int pinsKnockedDown = generateur.randomPin(10);
+        Roll roll = new Roll(pinsKnockedDown);
+        rolls.add(roll);
+
+        score += pinsKnockedDown;
+
+        return true;
     }
 
     public int getScore() {
-        return 0;
+        return this.score;
     }
 }

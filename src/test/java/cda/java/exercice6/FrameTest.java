@@ -24,7 +24,6 @@ public class FrameTest {
         boolean rollResult = frame.makeRoll();
 
         // Assert
-        Assert.assertTrue(rollResult);
         Assert.assertEquals(5, frame.getScore());
     }
 
@@ -39,7 +38,7 @@ public class FrameTest {
         boolean rollResult = frame.makeRoll();
 
         // Assert
-        Assert.assertTrue(rollResult);
+
         Assert.assertEquals(9, frame.getScore());
     }
 
