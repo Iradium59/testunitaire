@@ -21,7 +21,7 @@ public class RechercheVille {
         }
 
         return villes.stream()
-                .filter(ville -> ville.startsWith(mot))
+                .filter(ville -> ville.toLowerCase().startsWith(mot.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }
