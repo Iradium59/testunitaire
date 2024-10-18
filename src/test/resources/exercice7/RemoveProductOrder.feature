@@ -12,3 +12,8 @@ Feature: Suppression de produits de la commande
     When l'utilisateur clique sur le bouton "Supprimer" à côté du produit
     Then le produit est retiré de la commande
     And l'utilisateur voit un message de confirmation de suppression
+
+  Scenario: Tentative de suppression d'un produit qui n'est pas dans la commande
+    Given l'utilisateur n'a pas ajouté ce produit dans la commande
+    When l'utilisateur clique sur le bouton "Supprimer" à côté du produit
+    Then une erreur est renvoyée indiquant que le produit ne se trouve pas dans la commande

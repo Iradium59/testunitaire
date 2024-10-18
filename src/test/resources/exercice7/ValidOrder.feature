@@ -1,5 +1,5 @@
 Feature: Passer une commande
-  En tant qu'utilisateur, je veux passer une commande pour acheter les articles que j'ai ajoutés à mon panier.
+  En tant qu'utilisateur, je veux passer une commande pour acheter les articles que j'ai ajoutés à ma commande.
 
   Scenario: Passation d'une commande avec succès
     Given l'utilisateur accède au formulaire de commande
