@@ -3,6 +3,7 @@ package cda.java.exercice7;
 import io.cucumber.java.en.*;
 
 public class Login {
+
     @Given("l'utilisateur accède au formulaire de connexion")
     public void user_accesses_login_form() {
         System.out.println("Formulaire de connexion affiché.");
@@ -23,8 +24,18 @@ public class Login {
         System.out.println("Utilisateur redirigé vers la page d'accueil.");
     }
 
+    @Then("l'utilisateur voit son tableau de bord")
+    public void user_sees_dashboard() {
+        System.out.println("Tableau de bord affiché.");
+    }
+
     @Then("l'utilisateur voit un message d'erreur indiquant que les informations sont incorrectes")
     public void user_sees_error_message_for_incorrect_information() {
         System.out.println("Erreur : Nom d'utilisateur ou mot de passe incorrect.");
+    }
+
+    @Then("l'utilisateur est invité à réessayer")
+    public void user_is_invited_to_try_again() {
+        System.out.println("L'utilisateur est invité à réessayer.");
     }
 }

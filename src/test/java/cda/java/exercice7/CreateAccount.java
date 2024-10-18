@@ -18,4 +18,19 @@ public class CreateAccount {
     public void user_account_is_created() {
         System.out.println("Compte utilisateur créé.");
     }
+
+    @Then("l'utilisateur reçoit une confirmation")
+    public void user_receives_confirmation() {
+        System.out.println("Confirmation envoyée.");
+    }
+
+    @When("l'utilisateur entre un email qui existe déjà dans la base de données")
+    public void user_enters_existing_email_in_database() {
+        System.out.println("Email déjà utilisé.");
+    }
+
+    @Then("une erreur indiquant que l'email est déjà utilisé est renvoyée")
+    public void error_email_already_in_use_is_returned() {
+        System.out.println("Erreur : Email déjà utilisé.");
+    }
 }
