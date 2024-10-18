@@ -8,5 +8,5 @@ Feature: Ajouter des produits à la commande
 
   Scenario: Augmentation de la quantité d'un produit déjà présent dans la commande
     Given l'utilisateur a déjà ajouté un produit dans la commande
-    When l'utilisateur clique à nouveau sur le bouton "Ajouter à la commande"
+    When l'utilisateur clique sur le bouton "Ajouter à la commande"
     Then la quantité du produit dans la commande est augmentée de 1

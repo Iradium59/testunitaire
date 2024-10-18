@@ -24,11 +24,6 @@ public class AddProductOrder {
         System.out.println("Le produit est déjà dans la commande.");
     }
 
-    @When("l'utilisateur clique à nouveau sur le bouton {string}")
-    public void user_clicks_on_button_2(String buttonLabel) {
-        System.out.println("L'utilisateur a cliqué sur le bouton : " + buttonLabel);
-    }
-
     @Then("la quantité du produit dans la commande est augmentée de 1")
     public void product_quantity_in_order_is_increased_by_1() {
         System.out.println("La quantité du produit dans la commande est augmentée de 1.");
