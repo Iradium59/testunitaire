@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class RemoveProductOrder {
+public class RemoveProductOrderStep {
 
     @Given("l'utilisateur a ajouté un produit dans la commande")
     public void user_has_added_product_to_order() {

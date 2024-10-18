@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class ValidOrder {
+public class ValidOrderStep {
 
     @Given("l'utilisateur accède au formulaire de commande")
     public void user_accesses_order_form() {

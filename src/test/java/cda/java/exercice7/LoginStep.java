@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class Login {
+public class LoginStep {
 
     @Given("l'utilisateur accède au formulaire de connexion")
     public void user_accesses_login_form() {

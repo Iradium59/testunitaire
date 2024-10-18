@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class Search {
+public class SearchStep {
 
     @Given("l'utilisateur accède à la barre de recherche")
     public void user_accesses_search_bar() {

@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class CreateAccount {
+public class CreateAccountStep {
 
     @Given("l'utilisateur accède au formulaire d'inscription")
     public void user_accesses_registration_form() {

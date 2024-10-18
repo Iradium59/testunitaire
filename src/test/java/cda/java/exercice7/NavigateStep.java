@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class Navigate {
+public class NavigateStep {
 
     @Given("l'utilisateur accède à la page de catégories")
     public void user_accesses_category_page() {

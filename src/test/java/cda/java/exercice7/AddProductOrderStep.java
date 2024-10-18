@@ -2,7 +2,7 @@ package cda.java.exercice7;
 
 import io.cucumber.java.en.*;
 
-public class AddProductOrder {
+public class AddProductOrderStep {
 
     @Given("l'utilisateur est sur la page produit")
     public void user_is_on_product_page() {
